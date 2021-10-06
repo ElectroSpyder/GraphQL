@@ -24,7 +24,7 @@ namespace CommanderGQL
 
             services
                 .AddGraphQLServer()
-                .AddQueryType<CommanderGQL.GraphQL.Query>();
+                .AddQueryType<Query>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,11 +44,11 @@ app.UseWebSockets();
                endpoints.MapGraphQL();
             });
 
-            app.UseGraphQLVoyager(new GraphQLVoyagerOptions()
+            app.UseGraphQLVoyager(new VoyagerOptions()
             {
-                GraphQLEndPoint = "/graphql",
-                Path = "/graphql-voyager"
-            });
+                GraphQLEndPoint = "/graphql"
+                 
+            }, "/graphql-voyager");
            
         }
     }
