@@ -19,7 +19,7 @@ namespace CommanderGQL
         }
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<AppDbContext>(opt => opt.UseSqlServer
+            services.AddPooledDbContextFactory<AppDbContext>(opt => opt.UseSqlServer
             (Configuration.GetConnectionString("ConnectionCommon")));
 
             services
