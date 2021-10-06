@@ -7,7 +7,7 @@ namespace CommanderGQL.GraphQL
 
     public class Query
     {
-        IQueryable<Platform> GetPlatform([Service] AppDbContext context)
+        public IQueryable<Platform> GetPlatform([Service] AppDbContext context)
         {
             return context.Platforms;
         }
