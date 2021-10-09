@@ -1,0 +1,1 @@
+"DefaultConnection": "Server=SISTEMAS;Database = dbGraph;user id = sa;password = Passw0rd;Integrated Security = False;Trusted_Connection = False;",
