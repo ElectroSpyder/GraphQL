@@ -11,5 +11,7 @@ namespace GrapfQL.Core.Models
         public int? PositionId { get; set; }
         public int? Appearances { get; set; }
         public int? Goals { get; set; }
+
+        public virtual Position? Position { get; set; }
     }
 }

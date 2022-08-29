@@ -1,4 +1,5 @@
 using GrapfQL.Core.Models;
+using GrapfQL.Core.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,6 +8,8 @@ builder.Services.AddDbContext<FootballDBContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+
+builder.Services.AddScoped<IPlayerService, PlayerService>();
 
 // Add services to the container.
 builder.Services.AddRazorPages();
