@@ -8,3 +8,5 @@ Scaffold-DbContext "Server=.\SQLEXPRESS;Database=FootballDB;User Id=sa;password=
 //                optionsBuilder.UseSqlServer("Server=.\\SQLEXPRESS;Database=FootballDB;User Id=sa;password=Passw0rd;Trusted_Connection=False;MultipleActiveResultSets=true;");
 //            }
 
+
+3_ lunch  https://localhost:7164/graphql/

@@ -1,3 +1,4 @@
+using GrapfQL.Core.Api;
 using GrapfQL.Core.Models;
 using GrapfQL.Core.Services;
 using Microsoft.EntityFrameworkCore;
@@ -11,11 +12,16 @@ builder.Services.AddDbContext<FootballDBContext>(options =>
 
 builder.Services.AddScoped<IPlayerService, PlayerService>();
 
+//Exponer los objetos player, position, etc.
+builder.Services.AddGraphQLServer().AddQueryType<Query>();
+
 // Add services to the container.
 builder.Services.AddRazorPages();
 
 var app = builder.Build();
 
+//make /graphql per default like endpoint  "/my/graphql/endpoint"
+app.MapGraphQL();
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
