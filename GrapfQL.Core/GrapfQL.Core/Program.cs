@@ -1,5 +1,6 @@
 using GrapfQL.Core.Api;
 using GrapfQL.Core.Models;
+using GrapfQL.Core.Resolvers;
 using GrapfQL.Core.Services;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,9 +12,13 @@ builder.Services.AddDbContext<FootballDBContext>(options =>
 });
 
 builder.Services.AddScoped<IPlayerService, PlayerService>();
+builder.Services.AddScoped<IPositionService, PositionService>();
 
 //Exponer los objetos player, position, etc.
-builder.Services.AddGraphQLServer().AddQueryType<Query>();
+//builder.Services.AddGraphQLServer().AddQueryType<Query>();
+builder.Services.AddGraphQLServer()
+    .AddQueryType(x => x.Name("Query"))
+    .AddType<PlayerQueryResolver>();
 
 // Add services to the container.
 builder.Services.AddRazorPages();

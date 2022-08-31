@@ -1,5 +1,5 @@
 1_ in nueget console 
-Scaffold-DbContext "Server=.\SQLEXPRESS;Database=FootballDB;User Id=sa;password=tuPass;Trusted_Connection=False;MultipleActiveResultSets=true;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
+Scaffold-DbContext "Server=.\SQLEXPRESS;Database=FootballDB;User Id=sa;password=Passw0rd;Trusted_Connection=False;MultipleActiveResultSets=true;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
 
 2_ comment this line in your context file
 //            if (!optionsBuilder.IsConfigured)
