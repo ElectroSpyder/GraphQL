@@ -10,3 +10,39 @@ Scaffold-DbContext "Server=.\SQLEXPRESS;Database=FootballDB;User Id=sa;password=
 
 
 3_ lunch  https://localhost:7164/graphql/
+
+
+6_ mutation
+
+mutation{
+   createPlayer(playerInputs:  {
+    name: "Joseph",
+    shirtNo: 4,
+    appearances: 50,
+    goals: 4,
+    positionId: 1
+  })
+  {
+     id,
+     name
+  }
+}
+
+7_ update mutation 
+mutation{
+  updatePlayer(id: 0, playerInputs: {
+    name: "Joseph",
+    shirtNo: 4,
+    appearances: 51,
+    goals: 6,
+    positionId: 1
+  }) {
+    id,
+     name,
+     appearances,
+     goals
+  }
+}
+
+8_ mutation{deletePlayer(id: 0)
+}

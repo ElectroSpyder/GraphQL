@@ -1,6 +1,7 @@
 using GrapfQL.Core.Api;
 using GrapfQL.Core.Models;
 using GrapfQL.Core.Resolvers;
+using GrapfQL.Core.Resolvers.Mutations;
 using GrapfQL.Core.Services;
 using Microsoft.EntityFrameworkCore;
 
@@ -19,7 +20,9 @@ builder.Services.AddScoped<IPositionService, PositionService>();
 builder.Services.AddGraphQLServer()
     .AddQueryType(x => x.Name("Query"))
     .AddType<PlayerQueryResolver>()
-    .AddType<PositionQueryResolver>();
+    .AddType<PositionQueryResolver>()
+    .AddMutationType(m => m.Name("Mutation"))
+    .AddType<PlayerMutationResolver>();
 
 // Add services to the container.
 builder.Services.AddRazorPages();
