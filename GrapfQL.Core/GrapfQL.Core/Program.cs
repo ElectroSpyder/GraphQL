@@ -18,7 +18,8 @@ builder.Services.AddScoped<IPositionService, PositionService>();
 //builder.Services.AddGraphQLServer().AddQueryType<Query>();
 builder.Services.AddGraphQLServer()
     .AddQueryType(x => x.Name("Query"))
-    .AddType<PlayerQueryResolver>();
+    .AddType<PlayerQueryResolver>()
+    .AddType<PositionQueryResolver>();
 
 // Add services to the container.
 builder.Services.AddRazorPages();
