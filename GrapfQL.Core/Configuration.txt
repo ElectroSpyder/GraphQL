@@ -1,5 +1,10 @@
-1_ in nueget console 
+1_a in nueget console 
 Scaffold-DbContext "Server=.\SQLEXPRESS;Database=FootballDB;User Id=sa;password=Passw0rd;Trusted_Connection=False;MultipleActiveResultSets=true;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
+
+1_b in nuget console if no have database
+
+Add-Migration CuartaMigracion -Context FootballDBContext -OutputDir Models\Migrations\SqlServerMigrations
+update-database -context OrderDbContext
 
 2_ comment this line in your context file
 //            if (!optionsBuilder.IsConfigured)
