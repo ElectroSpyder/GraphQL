@@ -35,14 +35,23 @@ namespace GrapfQL.Core.Services
             return await _dbContext.Positions.ToListAsync();
         }
 
-        public Task<Position> GetPositionAsync(int id)
+        public async Task<Position> GetPositionAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _dbContext.Positions.Where(x => x.Id == id).SingleAsync();
         }
 
-        public Task<int> UpdatePositionAsync(Position player)
+        public async Task<int> UpdatePositionAsync(Position position)
         {
-            throw new NotImplementedException();
+            if (position != null)
+            {
+                _dbContext.Positions.Update(position);
+                return await _dbContext.SaveChangesAsync();
+            }
+            else
+            {
+                return 0;
+            }
+             
         }
     }
 }
