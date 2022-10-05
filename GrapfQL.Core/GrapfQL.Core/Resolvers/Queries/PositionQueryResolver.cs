@@ -1,7 +1,7 @@
 ﻿using GrapfQL.Core.Models;
 using GrapfQL.Core.Services;
 
-namespace GrapfQL.Core.Resolvers
+namespace GrapfQL.Core.Resolvers.Queries
 {
     [ExtendObjectType("Query")]
     public class PositionQueryResolver

@@ -1,4 +1,4 @@
-﻿namespace GrapfQL.Core.Resolvers.Mutations
+﻿namespace GrapfQL.Core.Models.ViewModels
 {
     public class PlayerInputs
     {

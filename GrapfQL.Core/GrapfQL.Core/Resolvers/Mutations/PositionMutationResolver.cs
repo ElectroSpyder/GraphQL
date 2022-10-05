@@ -1,4 +1,5 @@
 ﻿using GrapfQL.Core.Models;
+using GrapfQL.Core.Models.ViewModels;
 using GrapfQL.Core.Services;
 
 namespace GrapfQL.Core.Resolvers.Mutations
