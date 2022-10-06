@@ -11,7 +11,12 @@ namespace GrapfQL.Core.Resolvers.Mutations.UserMutation
         [GraphQLDescription("Registrar Usuario")]
         public async Task<UserResource> RegisterUserAsync(UserInputs userInputs, [Service] IUserService userService)
         {
-            var user = new RegisterResource(userInputs.UserName, userInputs.Email, userInputs.Password);
+            var user = new RegisterResource
+            {
+                UserName = userInputs.UserName,
+                Email = userInputs.Email,
+                Password = userInputs.Password
+            };
             return await userService.Register(user);
         }
     }

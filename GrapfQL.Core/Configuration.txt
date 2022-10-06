@@ -6,6 +6,9 @@ Scaffold-DbContext "Server=.\SQLEXPRESS;Database=FootballDB;User Id=sa;password=
 Add-Migration CuartaMigracion -Context FootballDBContext -OutputDir Models\Migrations\SqlServerMigrations
 update-database -context OrderDbContext
 
+Add-Migration PrimerMigracion -Context UserDbContext -OutputDir Models\Migrations\SqlServerMigrationsUser
+
+
 2_ comment this line in your context file
 //            if (!optionsBuilder.IsConfigured)
 //            {
@@ -51,3 +54,17 @@ mutation{
 
 8_ mutation{deletePlayer(id: 0)
 }
+
+9_ test mutation register
+
+mutation{
+  registerUser(userInputs: {
+    email:"prg",
+    userName:"pedrorene",
+    password:"prg"
+  }) {
+id,
+ username,
+  email
+  }
+}   

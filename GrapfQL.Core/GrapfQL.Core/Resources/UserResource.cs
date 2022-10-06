@@ -1,5 +1,11 @@
 ﻿namespace GrapfQL.Core.Resources
 {
-    public sealed record UserResource(int Id, string Username, string Email);
+    public class UserResource
+    {
+        public int Id { get; set; }
+        public string? Username { get; set; }
+        public string? Email { get; set; }
+        public string Password { get; set; }
+    }
   
 }

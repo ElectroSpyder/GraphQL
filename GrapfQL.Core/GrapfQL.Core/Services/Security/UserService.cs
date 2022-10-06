@@ -29,7 +29,7 @@ namespace GrapfQL.Core.Services.Security
             if (user.PasswordHash != passwordHash)
                 throw new Exception("Username or password did not match.");
 
-            return new UserResource(user.Id, user.Username, user.Email);
+            return new UserResource { Id= user.Id, Email = user.Email, Username= user.Username, Password = user.PasswordSalt};
         }
 
         public async Task<UserResource> Register(RegisterResource resource)
@@ -44,7 +44,7 @@ namespace GrapfQL.Core.Services.Security
             await userDbContext.Users.AddAsync(user);
             await userDbContext.SaveChangesAsync();
 
-            return new UserResource(user.Id, user.Email, user.PasswordSalt);
+            return new UserResource { Id = user.Id, Email = user.Email, Username = user.Username, Password = user.PasswordSalt };
         }
     }
 }

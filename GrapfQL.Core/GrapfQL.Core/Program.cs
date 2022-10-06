@@ -19,10 +19,6 @@ builder.Services.AddDbContext<UserDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("UserConnection"));
 });
 
-builder.Services.AddDbContext<UserDbContext>(options =>
-{
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
-});
 builder.Services.AddScoped<IPlayerService, PlayerService>();
 builder.Services.AddScoped<IPositionService, PositionService>();
 builder.Services.AddScoped<IUserService, UserService>();
@@ -31,13 +27,13 @@ builder.Services.AddScoped<IUserService, UserService>();
 //builder.Services.AddGraphQLServer().AddQueryType<Query>();
 builder.Services.AddGraphQLServer()
     .AddQueryType(x => x.Name("Query"))
-    .AddType<PlayerQueryResolver>()
-    .AddType<PositionQueryResolver>()
-    .AddType<UserQueryResolver>()
+        .AddType<PlayerQueryResolver>()
+        .AddType<PositionQueryResolver>()
+        .AddType<UserQueryResolver>()
     .AddMutationType(m => m.Name("Mutation"))
-    .AddType<PlayerMutationResolver>()
-    .AddType<PositionMutationResolver>().
-    AddType<UserMutationResolver>();
+        .AddType<PlayerMutationResolver>()
+        .AddType<PositionMutationResolver>().
+         AddType<UserMutationResolver>();
 
 // Add services to the container.
 builder.Services.AddRazorPages();
