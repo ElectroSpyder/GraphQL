@@ -10,7 +10,7 @@ namespace GrapfQL.Core.Resolvers.Queries
 
         [GraphQLName("loginUser")]
         [GraphQLDescription("Retorna usuario logeado")]
-        public async Task<UserResource> GetPlayersAsync(UserInputs userInputs, [Service] IUserService userService)
+        public async Task<UserResource> GetPLoginAsync(UserInputs userInputs, [Service] IUserService userService)
         {
             var resource = new LoginResource(userInputs.UserName, userInputs.Password);
             return await userService.Login(resource);

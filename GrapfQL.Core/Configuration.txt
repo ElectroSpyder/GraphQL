@@ -68,3 +68,17 @@ id,
   email
   }
 }   
+
+10_ Query
+
+query{
+  loginUser(userInputs: {
+      email:"jose@gmail.com",
+    userName:"jose2022",
+    password:"jose2022"
+  }) {
+id,
+ username,
+  email
+  }
+} 
